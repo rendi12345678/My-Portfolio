@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Rendi's Portfolio</title>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <h2 class="logo">Rendi's Portfolio</h2>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#about-me">About</a></li>
+        <li><a href="#my-projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    <div class="menu-toggle">
+      <input type="checkbox">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    </nav>
+  <header>
+    <section class="image-info">
+      <h1>HI I'M RENDI</h1>
+      <h2>I am a Frontend Developer</h2>
+      <p>I like to craft something cool that benefit for other peoples, so lets contact me.</p>
+      <button class="hire-btn">Contact Me</button>
+    </section>
+    <img src="img/rendi.jpg" alt="Rendi's Photo" class="photo">
+  </header>
+  <section class="about-me" id="about-me">
+    <img src="img/rendi.jpg" alt="Rendi Photo">
+    <div class="about-info">
+    <h1>About Me</h1>
+    <p>Hello, my name is Rendi Virgantara Setiawan, i am 17 years old, i live in Jombang and i am still a student in Jombang at Vocational High School, right now i am in third grade.</p>
+    <h2>My Skills.</h2>
+    <ul>
+      <li>Html</li>
+      <li>Css</li>
+      <li>Javascript</li>
+    </ul>
+    </div>
+  </section>
+  <section class="my-projects" id="my-projects">
+    <h1>My Projects</h1>
+    <div class="projects-info">
+      <figure>
+        <img src="img/todo.jpg" alt="Todo List Project">
+        <figcaption>
+          Todo list project, this is alowwed to you to create, read, update, and delete your tasks.
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="img/calculator.jpg" alt="Calculator Project">
+        <figcaption>
+          Calculator project, this is alowwed to you to calculate simple calculation.
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="img/movie.jpg" alt="Movies Web Project">
+        <figcaption>
+        Movies project, this is alowwed to you to find a latest movies, trending movies, popular movies, and you can search all movies in the world.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+  <button onclick="location.replace('my-projects.html')">Show All</button>
+  <section class="contact" id="contact">
+    <h1>Contact Me</h1>
+    <form action="" method="post">
+      <div>
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" required minlength="2">
+      </div>
+      <div>
+       <label for="email">Email</label>
+       <input type="email" name="email" id="email">
+      </div>
+      <div>
+        <label for="messages">Messages</label>
+        <textarea name="messages" id="messages" rows="8"></textarea>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </section>
+  </div>
+  <footer>Copyright 2023. By Rendi Virgantara Setiawan.</footer>
+  <script src="script.js"></script>
+</body>
+</html>

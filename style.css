@@ -1,0 +1,435 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-size-adjust: none;
+}
+
+body {
+  font-family: arial, Sans-Serif;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Container */
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  row-gap: 80px;
+}
+
+.container > * {
+  animation: opacityAnimation 1s forwards;
+}
+
+h1 {
+  color: #111;
+}
+
+/* Header */
+header {
+  width: 100vw;
+  display: grid;
+  grid: 
+    "image-info photo" auto
+    / 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  gap: 20px;
+  padding: 40px;
+  margin-top: 58px;
+  background: #eaeaea;
+}
+
+/* Navigation Bar */
+nav {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  padding: 15px 40px;
+  background: #fff;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 5px rgba(0,0,0,.25);
+}
+
+nav .logo {
+  color: #333;
+  margin-bottom: 0;
+}
+
+nav ul {
+  display: flex;
+  width: 35%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav li a {
+  text-decoration: none;
+  color: #333;
+  position: relative;
+  width: 0;
+  transform-origin: left;
+}
+
+nav ul li a::after {
+  content: "";
+  height: 2px;
+  background-color: #333;
+  width: 0;
+  bottom: -4px;
+  position: absolute;
+  left: 0;
+  transition: 300ms;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+  display: none;  
+  flex-direction: column;
+  height: 20px;
+  position: relative;
+  justify-content: space-between;
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  left: -6px;
+  top: -3px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block; 
+  width: 28px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 3px;
+  transition: all .5s;
+}
+
+/* Hamburger Menu Animation */
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 100%;
+}
+
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 0;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+  background-color: red;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+  background-color: red;
+  transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+  transform: scale(0);
+}
+
+
+img.photo {
+  grid-area: photo;
+  width: 220px;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  transition: 500ms;
+}
+
+img.photo:hover {
+  border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #222;
+  font-weight: 400;
+}
+
+p {
+  line-height: 1.5;
+  font-size: 16px;
+  color: #333;
+  font-weight: 400;
+}
+
+.hire-btn {
+  width: 120px;
+  height: 45px;
+  border: 0;
+  background: #0047AB;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
+.image-info {
+  grid-area: image-info;
+  display: grid;
+}
+
+/* About Me */
+.about-me {
+  display: grid;
+  grid-auto-flow: column;
+ /* padding: 40px;*/
+  width: 85%;
+  gap: 25px;
+}
+
+.about-info {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  row-gap: 10px;
+  align-self: start;
+}
+
+.about-info h1 {
+  margin-bottom: 0;
+}
+
+.about-me img {
+  width: 200px;
+}
+
+.about-me p {
+  width: 100%;
+}
+
+.about-me h2 {
+  font-weight: 600;
+  color: #333;
+  margin-top: 10px;
+}
+
+.about-me ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  justify-content: start;
+  row-gap: 20px;
+}
+
+.about-me ul li {
+  margin-right: 25px;
+  background: limegreen;
+  padding: 8px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+
+/* My Projects */
+.my-projects {
+  width: 85%;
+}
+
+.my-projects h1 {
+  text-align: center;
+  color: #111;
+}
+
+.projects-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  column-gap: 25px;
+  margin-top: 20px;
+}
+
+.projects-info p {
+  text-align: center;
+}
+
+.projects-info img {
+  width: 100%;
+  height: 100%;
+}
+
+figure img {
+  border: 1px solid rgba(0,0,0,.25);
+}
+
+figure figcaption {
+  margin-top: 10px;
+}
+
+button {
+  border: 0;
+  background: #333;
+  color: #fff;
+  height: 40px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  align-items: center;
+  border-radius: 15px;
+}
+
+/* Contact */
+.contact {
+  margin-bottom: 100px;
+  width: 85%;
+  max-width: 450px;
+}
+
+.contact h1 {
+  text-align: center;
+}
+
+.contact label {
+  display: block;
+  margin-top: 15px;
+  color: #333;
+}
+
+.contact input {
+  height: 35px;
+}
+
+.contact input, textarea {
+  outline: none;
+  margin-top: 5px;
+  width: 100%;
+  padding: 10px;
+}
+
+.contact button {
+  margin-top: 15px;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+
+/* Animation */
+@keyframes opacityAnimation {
+  0% {
+    opacity: 0;
+    transform: translatey(-50px);
+  }
+  
+  100% {
+    transform: translatey(0);
+    opacity: 1;
+  }
+}
+
+/* Mobile Version */
+@media (max-width: 600px) {
+  header {
+    grid:
+    "nav" auto
+    "photo" auto
+    "image-info" auto 
+    / 1fr;
+    padding: 25px;
+    margin-top: 48px;
+  }
+  
+  nav {
+    padding: 10px 25px;
+    z-index: 989999999;
+  }
+  
+  nav ul {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: -1;
+    flex-direction: column;
+    background: #eaeaea;
+    transform: translatex(100%);
+    opacity: 0;
+    transition: all 1s;
+    margin-top: 48px;
+  }
+  
+  button {
+    margin-top: 25px;
+  }
+  
+  nav ul.slide {
+    opacity: 1;
+    transform: translatex(0);
+  }
+  
+  .menu-toggle {
+    display: flex;
+  }
+  
+  img.photo {
+    width: 300px;
+  }
+
+  .image-info {
+    order: 2;
+  }
+
+  h1 {
+    margin-top: 20px;
+  }
+  
+  .about-me {
+    grid-auto-flow: row;
+    text-align: center;
+    width: 100%;
+    padding: 0 25px;
+  }
+  
+  .about-me img {
+    width: 265px;
+    margin: auto;
+  }
+  
+  .my-projects {
+    width: 100%;
+    padding: 0 25px;
+  }
+  
+  .projects-info {
+    row-gap: 100px;
+  }
+}
+
+
